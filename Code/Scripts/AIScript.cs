@@ -94,6 +94,18 @@ namespace Assets.Scripts
                 {
                     attackPoint = player.Enemy3.crusade.CrusadeSquad.transform.localPosition;
                 }
+                else if (player.Enemy1.gameObject.activeSelf)
+                {
+                    attackPoint = player.Enemy1.crusade.CrusadeSquad.transform.localPosition;
+                }
+                else if (player.Enemy2.gameObject.activeSelf)
+                {
+                    attackPoint = player.Enemy2.crusade.CrusadeSquad.transform.localPosition;
+                }
+                else if (player.Enemy3.gameObject.activeSelf)
+                {
+                    attackPoint = player.Enemy3.crusade.CrusadeSquad.transform.localPosition;
+                }
                 MoveToAttack(attackPoint);
             }
             player.EndTurn();

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts.Base;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
@@ -57,6 +58,8 @@ namespace Assets.Scripts
         public Button TurnButton;
         public GameObject GameEndPanel;
         public Text GameEndText;
+        public Button ExitButton;
+        public Button RestartButton;
 
         public void showInfoPlayer() //update basic info (money and people)
         {
@@ -214,6 +217,8 @@ namespace Assets.Scripts
             EndCrusadeButton.interactable = false;
             CastleButton.interactable = false;
             TurnButton.interactable = false;
+            ExitButton.interactable = true;
+            RestartButton.interactable = true;
             GameEndPanel.SetActive(true);
             GameEndText.text = "GameOver\n You Lose!";
         }
@@ -225,14 +230,28 @@ namespace Assets.Scripts
             EndCrusadeButton.interactable = false;
             CastleButton.interactable = false;
             TurnButton.interactable = false;
+            ExitButton.interactable = true;
+            RestartButton.interactable = true;
             GameEndPanel.SetActive(true);
             GameEndText.text = "Victory!";
+        }
+
+        public void RestartGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void ExitGame()
+        {
+            Application.Quit();
         }
 
         // Start is called before the first frame update
         void Start() //Starting settings of the UI
         {
             EndCrusadeButton.interactable = false;
+            ExitButton.interactable = false;
+            RestartButton.interactable = false;
             CrusadeMode.text = "Crusade: Off";
             inputRookie.text = "0";
             inputShooter.text = "0";

@@ -8,8 +8,8 @@ namespace Assets.Scripts
     public class Player : MonoBehaviour //Player mane class
     {
         public bool AI; //determines if the current player is controlled by AI or not
-        public static bool end = false; //static parameter to trake if game ended or not
-        public static int turnCount = 1; //static parameter to count turns
+        public static bool end; //static parameter to trake if game ended or not
+        public static int turnCount; //static parameter to count turns
         public int money; //player money
         public int people; //player people
         public TownHall hall;
@@ -56,6 +56,8 @@ namespace Assets.Scripts
 
         void Start()
         {
+            end = false;
+            turnCount = 1;
             money = 500;
             people = 100;
             if (!AI)
