@@ -36,7 +36,6 @@ namespace Assets.Scripts
         public Text SoldierAttack;
         public Text SoldierDefence;
         public Text SoldierSpeed;
-        public Text SoldierGS;
         public Text SoldierCost;
         public GameObject CrusadePanel;
         public Text CrusadeRookies;
@@ -48,6 +47,7 @@ namespace Assets.Scripts
         public Text CrusadeInfantry2;
         public Text CrusadeCavalry2;
         public Text CrusadeMode;
+        public Text CrusadeMoves;
         public InputField inputRookie;
         public InputField inputShooter;
         public InputField inputInfantry;
@@ -72,7 +72,7 @@ namespace Assets.Scripts
         }
         public void showInfoArmy() //update info about army in the castle
         {
-            ArmyRookies.text = "Rookies: " + army.rookie + "; max: unlim; " + "Cost: " + army.Rookie.Cost;
+            ArmyRookies.text = "Rookies: " + army.rookie + "; max: " + army.maxRookie + "Cost: " + army.Rookie.Cost;
             ArmyShooters.text = "Shooters: " + army.shooter + "; max: " + army.maxShooter + "; Cost: " + army.Shooter.Cost;
             ArmyInfantry.text = "Infantry: " + army.infantry + "; max: " + army.maxInfantry + "; Cost: " + army.Infantry.Cost;
             ArmyCavalry.text = "Cavalry: " + army.cavalry + "; max: " + army.maxCavalry + "; Cost: " + army.Cavalry.Cost;
@@ -98,6 +98,8 @@ namespace Assets.Scripts
                 CrusadeShooters2.text = "Shooters: " + crusade.shooter;
                 CrusadeInfantry2.text = "Infantry: " + crusade.infantry;
                 CrusadeCavalry2.text = "Cavalry: " + crusade.cavalry;
+                CrusadeMoves.text = "Map Moves: " + crusade.movePoints;
+
             }
             else
             {
@@ -106,7 +108,8 @@ namespace Assets.Scripts
                 CrusadeShooters2.text = "Shooters: ";
                 CrusadeInfantry2.text = "Infantry: ";
                 CrusadeCavalry2.text = "Cavalry: ";
-            }
+                CrusadeMoves.text = "";
+    }
         }
 
         public void OpenCrusade() //show panel for composing crusade squad
@@ -204,7 +207,6 @@ namespace Assets.Scripts
             SoldierAttack.text = "Att: " + soldier.Attack.ToString();
             SoldierDefence.text = "Def: " + soldier.Defence.ToString();
             SoldierSpeed.text = "Speed: " + soldier.Speed.ToString();
-            SoldierGS.text = "GS: " + soldier.GS.ToString();
             SoldierCost.text = "Cost: " + soldier.Cost.ToString();
             upgradeButton.interactable = false;
             upgradeButton.gameObject.SetActive(false);            
@@ -257,6 +259,7 @@ namespace Assets.Scripts
             inputShooter.text = "0";
             inputInfantry.text = "0";
             inputCavalry.text = "0";
+            CrusadeMoves.text = "";
             CrusadePanel.SetActive(false);
             GameEndPanel.SetActive(false);
         }

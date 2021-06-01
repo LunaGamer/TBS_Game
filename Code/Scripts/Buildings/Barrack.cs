@@ -8,6 +8,7 @@ namespace Assets.Scripts.Buildings
         public bool Shooters;
         public bool Infantry;
         public bool Cavalry;
+        public int rookieHire;
         public int shooterHire; //limit of shooters to hire in one turn
         public int infantryHire; //limit of infantry to hire in one turn
         public int cavalryHire; //limit of cavalry to hire in one turn
@@ -21,6 +22,7 @@ namespace Assets.Scripts.Buildings
             Shooters = true;
             Infantry = false;
             Cavalry = false;
+            rookieHire = 3;
             shooterHire = 1;
             infantryHire = 0;
             cavalryHire = 0;
@@ -46,6 +48,7 @@ namespace Assets.Scripts.Buildings
                     base.lvlUp();
                     if (lvl <= 3)
                     {
+                        rookieHire += 1;
                         shooterHire += 1;
                         army.maxShooter += 1;
                     }

@@ -10,7 +10,6 @@ namespace Assets.Scripts.Army
             Attack = 2;
             Defence = 2;
             Speed = 1;
-            GS = 1;
             Cost = 2;
         }
         // Start is called before the first frame update

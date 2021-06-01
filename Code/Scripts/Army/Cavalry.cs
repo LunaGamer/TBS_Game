@@ -7,10 +7,9 @@ namespace Assets.Scripts.Army
         public Cavalry()
         {
             soldierName = "Cavalry";
-            Attack = 7;
-            Defence = 20;
+            Attack = 20;
+            Defence = 7;
             Speed = 3;
-            GS = 4;
             Cost = 48;
         }
         // Start is called before the first frame update

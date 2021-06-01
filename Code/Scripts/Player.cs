@@ -63,6 +63,7 @@ namespace Assets.Scripts
             if (!AI)
             {
                 ui.showInfoPlayer();
+                ui.showInfoBuilding(hall);
             }
         }
 

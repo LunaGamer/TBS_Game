@@ -7,10 +7,9 @@ namespace Assets.Scripts.Army
         public Shooter()
         {
             soldierName = "Shooter";
-            Attack = 3;
-            Defence = 4;
+            Attack = 4;
+            Defence = 3;
             Speed = 3;
-            GS = 3;
             Cost = 8;
         }
         // Start is called before the first frame update

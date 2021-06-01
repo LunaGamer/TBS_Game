@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public Walls walls;
         public InterfaceController ui;
         public int rookie; //number of rookies
+        public int maxRookie;
         public int shooter; //number of shooter
         public int maxShooter; //shooters limit for hiring on one turn
         public int infantry; //number of infantry 
@@ -26,6 +27,7 @@ namespace Assets.Scripts
         public ArmyScript()
         {
             rookie = 0;
+            maxRookie = 3;
             shooter = 0;
             maxShooter = 1;
             infantry = 0;
@@ -36,9 +38,10 @@ namespace Assets.Scripts
 
         public void HireRookie() //function to hire rookie
         {
-            if (Rookie.Hire(player, 1))
+            if (Rookie.Hire(player, maxRookie))
             {
                 rookie += 1;
+                maxRookie -= 1;
                 if (!player.AI)
                 {
                     ui.showInfoArmy();
@@ -86,6 +89,7 @@ namespace Assets.Scripts
 
         public void EndTurn() //function to reset limits at the end of the turn
         {
+            maxRookie = barracks.rookieHire;
             maxShooter = barracks.shooterHire;
             maxInfantry = barracks.infantryHire;
             maxCavalry = barracks.cavalryHire;
@@ -112,6 +116,7 @@ namespace Assets.Scripts
         void Start()
         {
             rookie = 0;
+            maxRookie = 3;
             shooter = 0;
             maxShooter = 1;
             infantry = 0;

@@ -10,7 +10,6 @@ namespace Assets.Scripts
         public int infantry; //number of infantry in crusade squad
         public int cavalry; //number of cavalry in crusade squad
         public int moveSpeed; //movespeed, minimal value in the group
-        public int moveGS; //GS points, minimal value in the group
         public int movePoints; //movespeed*GS - max distance on the map in one turn
         public bool Crusade; //bool parameter, true - crusade is started
         public Player player;
@@ -45,25 +44,21 @@ namespace Assets.Scripts
                 if (rookie != 0)
                 {
                     moveSpeed = 1;
-                    moveGS = 1;
                 }
                 else if (infantry != 0)
                 {
                     moveSpeed = 1;
-                    moveGS = 3;
                 }
                 else if (shooter != 0)
                 {
                     moveSpeed = 3;
-                    moveGS = 3;
                 }
                 else if (cavalry != 0)
                 {
                     moveSpeed = 3;
-                    moveGS = 4;
                 }
                 Crusade = true;
-                movePoints = moveGS * moveSpeed;
+                movePoints = moveSpeed;
                 CrusadeSquad.SetActive(true);
                 if (!player.AI)
                 {
@@ -133,13 +128,17 @@ namespace Assets.Scripts
                     }
                 }
             }
+            if (!player.AI)
+            {
+                ui.showInfoCrusade();
+            }
         }
 
         public void EndTurn() //reser movepoints at the end of the turn
         {
             if (Crusade)
             {
-                movePoints = moveGS * moveSpeed;
+                movePoints = moveSpeed;
             }
         }
 

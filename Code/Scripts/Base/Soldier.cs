@@ -2,14 +2,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.Base
 {
-    public class Soldier : MonoBehaviour //basic class for every soldier unit
+    public abstract class Soldier : MonoBehaviour //basic class for every soldier unit
     {
         public bool AI;
         public string soldierName;
         public int Attack;
         public int Defence;
         public int Speed;
-        public int GS;
         public int Cost;
         public InterfaceController ui;
 

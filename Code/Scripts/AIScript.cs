@@ -42,7 +42,7 @@ namespace Assets.Scripts
                 {
                     walls.lvlUp();
                     barracks.lvlUp();
-                    for (int i = 0; i < 50; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         army.HireCavalry();
                         army.HireInfantry();
@@ -61,7 +61,7 @@ namespace Assets.Scripts
                 if (player.money > 300)
                 {
                     barracks.lvlUp();
-                    for (int i = 0; i < 20; i++)
+                    for (int i = 0; i < 5; i++)
                     {
                         army.HireCavalry();
                         army.HireInfantry();
@@ -75,7 +75,7 @@ namespace Assets.Scripts
                     houses.lvlUp();
                     if (!crusade.Crusade)
                     {
-                        crusade.ConfirmCrusade(army.rookie, army.shooter, army.infantry, army.cavalry);
+                        crusade.ConfirmCrusade(army.rookie * 3 / 4, army.shooter, army.infantry, army.cavalry);
                         rnd = Random.Range(0, 100);
                     }
                 }                
