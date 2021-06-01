@@ -7,6 +7,7 @@ namespace Assets.Scripts
 {
     public class Player : MonoBehaviour //Player mane class
     {
+        public bool AutoHire;
         public bool AI; //determines if the current player is controlled by AI or not
         public static bool end; //static parameter to trake if game ended or not
         public static int turnCount; //static parameter to count turns
@@ -48,11 +49,24 @@ namespace Assets.Scripts
             {
                 turnCount += 1;
                 controller.turn += 1;
+                if (AutoHire)
+                {
+                    for (int i=0;i<5;i++)
+                    {
+                        army.HireRookie();
+                        army.HireShooter();
+                        army.HireInfantry();
+                        army.HireCavalry();
+                    }
+                }
                 ui.showInfoPlayer();
             }
         }
 
-
+        public void AutoHireChange()
+        {
+            AutoHire = !AutoHire;
+        }
 
         void Start()
         {
@@ -62,6 +76,7 @@ namespace Assets.Scripts
             people = 100;
             if (!AI)
             {
+                AutoHire = true;
                 ui.showInfoPlayer();
                 ui.showInfoBuilding(hall);
             }

@@ -5,7 +5,7 @@ namespace Assets.Scripts.Buildings
     public class Church : Building //church class
     {
         public int crusadeAttack; //attack bonus in crusade
-        public int crusadeDefence; //defense bonus in crusade
+        public int castleAttack; //attack bonus in castle
 
         public Church()
         {
@@ -14,9 +14,9 @@ namespace Assets.Scripts.Buildings
             maxLvl = 10;
             upgrCost = 750;
             crusadeAttack = 0;
-            crusadeDefence = 0;
+            castleAttack = 0;
             addStat1Text = "Crusade Attack: " + crusadeAttack;
-            addStat2Text = "Def Attack: " + crusadeDefence;
+            addStat2Text = "Def Attack: " + castleAttack;
         }
 
         public override void lvlUp() //lvl up override for Church
@@ -37,14 +37,14 @@ namespace Assets.Scripts.Buildings
                     base.lvlUp();
                     if (lvl % 2 == 0)
                     {
-                        crusadeDefence += 1;
+                        castleAttack += 1;
                     }
                     if (lvl % 3 == 0)
                     {
                         crusadeAttack += 1;
                     }
                     addStat1Text = "Crusade Attack: " + crusadeAttack;
-                    addStat2Text = "Def Attack: " + crusadeDefence;
+                    addStat2Text = "Def Attack: " + castleAttack;
                     if (!player.AI)
                     {
                         ui.showInfoBuilding(this);

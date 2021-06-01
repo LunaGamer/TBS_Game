@@ -127,10 +127,10 @@ namespace Assets.Scripts
                         battle.BattleCalculation(player, player.Enemy3, this, player.Enemy3.army);
                     }
                 }
-            }
-            if (!player.AI)
-            {
-                ui.showInfoCrusade();
+                if (!player.AI)
+                {
+                    ui.showInfoCrusade();
+                }
             }
         }
 
@@ -139,6 +139,10 @@ namespace Assets.Scripts
             if (Crusade)
             {
                 movePoints = moveSpeed;
+                if (!player.AI)
+                {
+                    ui.showInfoCrusade();
+                }
             }
         }
 

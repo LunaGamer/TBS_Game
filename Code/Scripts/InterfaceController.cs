@@ -72,7 +72,7 @@ namespace Assets.Scripts
         }
         public void showInfoArmy() //update info about army in the castle
         {
-            ArmyRookies.text = "Rookies: " + army.rookie + "; max: " + army.maxRookie + "Cost: " + army.Rookie.Cost;
+            ArmyRookies.text = "Rookies: " + army.rookie + "; max: " + army.maxRookie + "; Cost: " + army.Rookie.Cost;
             ArmyShooters.text = "Shooters: " + army.shooter + "; max: " + army.maxShooter + "; Cost: " + army.Shooter.Cost;
             ArmyInfantry.text = "Infantry: " + army.infantry + "; max: " + army.maxInfantry + "; Cost: " + army.Infantry.Cost;
             ArmyCavalry.text = "Cavalry: " + army.cavalry + "; max: " + army.maxCavalry + "; Cost: " + army.Cavalry.Cost;
@@ -179,6 +179,7 @@ namespace Assets.Scripts
             EndCrusadeButton.interactable = false;
             CrusadeButton.interactable = true;
             showInfoCrusade();
+            showInfoArmy();
         }
 
         public void showInfoBuilding(Building building) //show info about choosen building in castle
@@ -186,8 +187,8 @@ namespace Assets.Scripts
             int upgrade = building.upgrCost * building.lvl;
             BuildingName.text = building.buildingName;
             BuildingLevel.text = "lvl: " + building.lvl.ToString();
-            BuildingMaxLevel.text = "maxLvl: " + building.maxLvl.ToString();
-            BuildingUpgradeCost.text = "lvlUP Cost: " + upgrade.ToString();
+            BuildingMaxLevel.text = "max: " + building.maxLvl.ToString();
+            BuildingUpgradeCost.text = "Ugrade Cost: " + upgrade.ToString();
             BuildingAddField1.text = building.addStat1Text;
             BuildingAddField2.text = building.addStat2Text;
             upgradeButton.gameObject.SetActive(true);
