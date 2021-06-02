@@ -15,7 +15,11 @@ namespace Assets.Scripts.Army
         // Start is called before the first frame update
         void Start()
         {
-
+            soldierName = "Infantry";
+            Attack = 8;
+            Defence = 6;
+            Speed = 1;
+            Cost = 20;
         }
 
         // Update is called once per frame

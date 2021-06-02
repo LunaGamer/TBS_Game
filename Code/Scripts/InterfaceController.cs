@@ -153,7 +153,11 @@ namespace Assets.Scripts
                     soldierType = 0;
                     break;
             }
-            if (Convert.ToInt32(input.text) > army.GetSoldierMax(soldierType))
+            if (input.text.Length < 1 || input.text.ToString() == "-" || Convert.ToInt32(input.text) <= 0)
+            {
+                input.text = 0.ToString();
+            }
+            else if (Convert.ToInt32(input.text) > army.GetSoldierMax(soldierType))
             {
                 input.text = army.GetSoldierMax(soldierType).ToString();
             }

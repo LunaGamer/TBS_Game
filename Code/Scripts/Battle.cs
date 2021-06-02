@@ -45,6 +45,7 @@ namespace Assets.Scripts
                             army2.rookie = ((Defence2[0] - Attack1[i]) / (Rookie.Defence + player2.walls.defence));
                             army2.rookie = army2.rookie > 0 ? army2.rookie : 0;
                             Defence2[0] = Rookie.DefenceCalculation(army2.rookie, player2.walls.defence);
+                            Attack2[3] = Rookie.AttackCalculation(army2.rookie, player2.church.castleAttack);
                             switch (i)
                             {
                                 case 0:
@@ -52,6 +53,7 @@ namespace Assets.Scripts
                                         crusade1.cavalry = ((Defence1[3] - (Attack2[3] * 3 / 4)) / (Cavalry.Defence));
                                         crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                                         Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
+                                        Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -63,6 +65,7 @@ namespace Assets.Scripts
                                         crusade1.infantry = ((Defence1[2] - (Attack2[3] * 3 / 4)) / (Infantry.Defence));
                                         crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                                         Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
+                                        Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -70,6 +73,7 @@ namespace Assets.Scripts
                                         crusade1.rookie = ((Defence1[0] - (Attack2[3] * 3 / 4)) / (Rookie.Defence));
                                         crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                                         Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
+                                        Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
                                         break;
                                     }
                             }
@@ -79,6 +83,7 @@ namespace Assets.Scripts
                             army2.shooter = ((Defence2[1] - Attack1[i]) / (Shooter.Defence + player2.walls.defence));
                             army2.shooter = army2.shooter > 0 ? army2.shooter : 0;
                             Defence2[1] = Shooter.DefenceCalculation(army2.shooter, player2.walls.defence);
+                            Attack2[1] = Shooter.AttackCalculation(army2.shooter, player2.church.castleAttack);
                             switch (i)
                             {
                                 case 0:
@@ -86,6 +91,7 @@ namespace Assets.Scripts
                                         crusade1.cavalry = ((Defence1[3] - (Attack2[1] * 3 / 4)) / (Cavalry.Defence));
                                         crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                                         Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
+                                        Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -97,6 +103,7 @@ namespace Assets.Scripts
                                         crusade1.infantry = ((Defence1[2] - (Attack2[1] * 3 / 4)) / (Infantry.Defence));
                                         crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                                         Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
+                                        Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -104,6 +111,7 @@ namespace Assets.Scripts
                                         crusade1.rookie = ((Defence1[0] - (Attack2[1] * 3 / 4)) / (Rookie.Defence));
                                         crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                                         Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
+                                        Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
                                         break;
                                     }
                             }
@@ -113,6 +121,7 @@ namespace Assets.Scripts
                             army2.infantry = ((Defence2[2] - Attack1[i]) / (Infantry.Defence + player2.walls.defence));
                             army2.infantry = army2.infantry > 0 ? army2.infantry : 0;
                             Defence2[2] = Infantry.DefenceCalculation(army2.infantry, player2.walls.defence);
+                            Attack2[2] = Infantry.AttackCalculation(army2.infantry, player2.church.castleAttack);
                             switch (i)
                             {
                                 case 0:
@@ -120,6 +129,7 @@ namespace Assets.Scripts
                                         crusade1.cavalry = ((Defence1[3] - (Attack2[2] * 3 / 4)) / (Cavalry.Defence));
                                         crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                                         Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
+                                        Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -131,6 +141,7 @@ namespace Assets.Scripts
                                         crusade1.infantry = ((Defence1[2] - (Attack2[2] * 3 / 4)) / (Infantry.Defence));
                                         crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                                         Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
+                                        Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -138,6 +149,7 @@ namespace Assets.Scripts
                                         crusade1.rookie = ((Defence1[0] - (Attack2[2] * 3 / 4)) / (Rookie.Defence));
                                         crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                                         Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
+                                        Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
                                         break;
                                     }
                             }
@@ -147,6 +159,7 @@ namespace Assets.Scripts
                             army2.cavalry = ((Defence2[3] - Attack1[i]) / (Cavalry.Defence + player2.walls.defence));
                             army2.cavalry = army2.cavalry > 0 ? army2.cavalry : 0;
                             Defence2[3] = Cavalry.DefenceCalculation(army2.cavalry, player2.walls.defence);
+                            Attack2[0] = Cavalry.AttackCalculation(army2.cavalry, player2.church.castleAttack);
                             switch (i)
                             {
                                 case 0:
@@ -187,6 +200,7 @@ namespace Assets.Scripts
                             crusade1.rookie = ((Defence1[0] - Attack2[i]) / (Rookie.Defence));
                             crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                             Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
+                            Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -194,6 +208,7 @@ namespace Assets.Scripts
                                         army2.cavalry = ((Defence2[3] - (Attack1[3] * 3 / 4)) / (Cavalry.Defence + player2.walls.defence));
                                         army2.cavalry = army2.cavalry > 0 ? army2.cavalry : 0;
                                         Attack2[0] = Cavalry.AttackCalculation(army2.cavalry, player2.church.castleAttack);
+                                        Defence2[3] = Cavalry.DefenceCalculation(army2.cavalry, player2.walls.defence);
                                         break;
                                     }
                                 case 1:
@@ -205,13 +220,15 @@ namespace Assets.Scripts
                                         army2.infantry = ((Defence2[2] - (Attack1[3] * 3 / 4)) / (Infantry.Defence + player2.walls.defence));
                                         army2.infantry = army2.infantry > 0 ? army2.infantry : 0;
                                         Attack2[2] = Infantry.AttackCalculation(army2.infantry, player2.church.castleAttack);
+                                        Defence2[2] = Infantry.DefenceCalculation(army2.infantry, player2.walls.defence);
                                         break;
                                     }
                                 case 3:
                                     {
-                                        army2.rookie = ((Defence2[0] - (Attack1[3] * 3 / 4)) / (Rookie.Defence));
+                                        army2.rookie = ((Defence2[0] - (Attack1[3] * 3 / 4)) / (Rookie.Defence + player2.walls.defence));
                                         army2.rookie = army2.rookie > 0 ? army2.rookie : 0;
                                         Attack2[3] = Rookie.AttackCalculation(army2.rookie, player2.church.castleAttack);
+                                        Defence2[0] = Rookie.DefenceCalculation(army2.rookie, player2.walls.defence);
                                         break;
                                     }
                             }
@@ -221,6 +238,7 @@ namespace Assets.Scripts
                             crusade1.shooter = ((Defence1[1] - Attack2[i]) / (Shooter.Defence));
                             crusade1.shooter = crusade1.shooter > 0 ? crusade1.shooter : 0;
                             Defence1[1] = Shooter.DefenceCalculation(crusade1.shooter, 0);
+                            Attack1[1] = Shooter.AttackCalculation(crusade1.shooter, player1.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -228,6 +246,7 @@ namespace Assets.Scripts
                                         army2.cavalry = ((Defence2[3] - (Attack1[1] * 3 / 4)) / (Cavalry.Defence + player2.walls.defence));
                                         army2.cavalry = army2.cavalry > 0 ? army2.cavalry : 0;
                                         Attack2[0] = Cavalry.AttackCalculation(army2.cavalry, player2.church.castleAttack);
+                                        Defence2[3] = Cavalry.DefenceCalculation(army2.cavalry, player2.walls.defence);
                                         break;
                                     }
                                 case 1:
@@ -239,13 +258,15 @@ namespace Assets.Scripts
                                         army2.infantry = ((Defence2[2] - (Attack1[1] * 3 / 4)) / (Infantry.Defence + player2.walls.defence));
                                         army2.infantry = army2.infantry > 0 ? army2.infantry : 0;
                                         Attack2[2] = Infantry.AttackCalculation(army2.infantry, player2.church.castleAttack);
+                                        Defence2[2] = Infantry.DefenceCalculation(army2.infantry, player2.walls.defence);
                                         break;
                                     }
                                 case 3:
                                     {
-                                        army2.rookie = ((Defence2[0] - (Attack1[1] * 3 / 4)) / (Rookie.Defence));
+                                        army2.rookie = ((Defence2[0] - (Attack1[1] * 3 / 4)) / (Rookie.Defence + player2.walls.defence));
                                         army2.rookie = army2.rookie > 0 ? army2.rookie : 0;
                                         Attack2[3] = Rookie.AttackCalculation(army2.rookie, player2.church.castleAttack);
+                                        Defence2[0] = Rookie.DefenceCalculation(army2.rookie, player2.walls.defence);
                                         break;
                                     }
                             }
@@ -255,6 +276,7 @@ namespace Assets.Scripts
                             crusade1.infantry = ((Defence1[2] - Attack2[i]) / (Infantry.Defence));
                             crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                             Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
+                            Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -262,6 +284,7 @@ namespace Assets.Scripts
                                         army2.cavalry = ((Defence2[3] - (Attack1[2] * 3 / 4)) / (Cavalry.Defence + player2.walls.defence));
                                         army2.cavalry = army2.cavalry > 0 ? army2.cavalry : 0;
                                         Attack2[0] = Cavalry.AttackCalculation(army2.cavalry, player2.church.castleAttack);
+                                        Defence2[3] = Cavalry.DefenceCalculation(army2.cavalry, player2.walls.defence);
                                         break;
                                     }
                                 case 1:
@@ -273,13 +296,15 @@ namespace Assets.Scripts
                                         army2.infantry = ((Defence2[2] - (Attack1[2] * 3 / 4)) / (Infantry.Defence + player2.walls.defence));
                                         army2.infantry = army2.infantry > 0 ? army2.infantry : 0;
                                         Attack2[2] = Infantry.AttackCalculation(army2.infantry, player2.church.castleAttack);
+                                        Defence2[2] = Infantry.DefenceCalculation(army2.infantry, player2.walls.defence);
                                         break;
                                     }
                                 case 3:
                                     {
-                                        army2.rookie = ((Defence2[0] - (Attack1[2] * 3 / 4)) / (Rookie.Defence));
+                                        army2.rookie = ((Defence2[0] - (Attack1[2] * 3 / 4)) / (Rookie.Defence + player2.walls.defence));
                                         army2.rookie = army2.rookie > 0 ? army2.rookie : 0;
                                         Attack2[3] = Rookie.AttackCalculation(army2.rookie, player2.church.castleAttack);
+                                        Defence2[0] = Rookie.DefenceCalculation(army2.rookie, player2.walls.defence);
                                         break;
                                     }
                             }
@@ -289,6 +314,7 @@ namespace Assets.Scripts
                             crusade1.cavalry = ((Defence1[3] - Attack2[i]) / (Cavalry.Defence));
                             crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                             Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
+                            Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -296,6 +322,7 @@ namespace Assets.Scripts
                                         army2.cavalry = ((Defence2[3] - (Attack1[0] * 3 / 4)) / (Cavalry.Defence + player2.walls.defence));
                                         army2.cavalry = army2.cavalry > 0 ? army2.cavalry : 0;
                                         Attack2[0] = Cavalry.AttackCalculation(army2.cavalry, player2.church.castleAttack);
+                                        Defence2[3] = Cavalry.DefenceCalculation(army2.cavalry, player2.walls.defence);
                                         break;
                                     }
                                 case 1:
@@ -307,13 +334,15 @@ namespace Assets.Scripts
                                         army2.infantry = ((Defence2[2] - (Attack1[0] * 3 / 4)) / (Infantry.Defence + player2.walls.defence));
                                         army2.infantry = army2.infantry > 0 ? army2.infantry : 0;
                                         Attack2[2] = Infantry.AttackCalculation(army2.infantry, player2.church.castleAttack);
+                                        Defence2[2] = Infantry.DefenceCalculation(army2.infantry, player2.walls.defence);
                                         break;
                                     }
                                 case 3:
                                     {
-                                        army2.rookie = ((Defence2[0] - (Attack1[0] * 3 / 4)) / (Rookie.Defence));
+                                        army2.rookie = ((Defence2[0] - (Attack1[0] * 3 / 4)) / (Rookie.Defence + player2.walls.defence));
                                         army2.rookie = army2.rookie > 0 ? army2.rookie : 0;
                                         Attack2[3] = Rookie.AttackCalculation(army2.rookie, player2.church.castleAttack);
+                                        Defence2[0] = Rookie.DefenceCalculation(army2.rookie, player2.walls.defence);
                                         break;
                                     }
                             }
@@ -399,6 +428,7 @@ namespace Assets.Scripts
                             crusade2.rookie = ((Defence2[0] - Attack1[i]) / (Rookie.Defence));
                             crusade2.rookie = crusade2.rookie > 0 ? crusade2.rookie : 0;
                             Defence2[0] = Rookie.DefenceCalculation(crusade2.rookie, 0);
+                            Attack2[3] = Rookie.AttackCalculation(crusade2.rookie, player2.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -406,6 +436,7 @@ namespace Assets.Scripts
                                         crusade1.cavalry = ((Defence1[3] - (Attack2[3] * 3 / 4)) / (Cavalry.Defence));
                                         crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                                         Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
+                                        Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -417,6 +448,7 @@ namespace Assets.Scripts
                                         crusade1.infantry = ((Defence1[2] - (Attack2[3] * 3 / 4)) / (Infantry.Defence));
                                         crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                                         Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
+                                        Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -424,6 +456,7 @@ namespace Assets.Scripts
                                         crusade1.rookie = ((Defence1[0] - (Attack2[3] * 3 / 4)) / (Rookie.Defence));
                                         crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                                         Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
+                                        Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
                                         break;
                                     }
                             }
@@ -433,6 +466,7 @@ namespace Assets.Scripts
                             crusade2.shooter = ((Defence2[1] - Attack1[i]) / (Shooter.Defence));
                             crusade2.shooter = crusade2.shooter > 0 ? crusade2.shooter : 0;
                             Defence2[1] = Shooter.DefenceCalculation(crusade2.shooter, 0);
+                            Attack2[1] = Shooter.AttackCalculation(crusade2.shooter, player2.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -440,6 +474,7 @@ namespace Assets.Scripts
                                         crusade1.cavalry = ((Defence1[3] - (Attack2[1] * 3 / 4)) / (Cavalry.Defence));
                                         crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                                         Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
+                                        Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -451,6 +486,7 @@ namespace Assets.Scripts
                                         crusade1.infantry = ((Defence1[2] - (Attack2[1] * 3 / 4)) / (Infantry.Defence));
                                         crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                                         Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
+                                        Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -458,6 +494,7 @@ namespace Assets.Scripts
                                         crusade1.rookie = ((Defence1[0] - (Attack2[1] * 3 / 4)) / (Rookie.Defence));
                                         crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                                         Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
+                                        Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
                                         break;
                                     }
                             }
@@ -467,6 +504,7 @@ namespace Assets.Scripts
                             crusade2.infantry = ((Defence2[2] - Attack1[i]) / (Infantry.Defence));
                             crusade2.infantry = crusade2.infantry > 0 ? crusade2.infantry : 0;
                             Defence2[2] = Infantry.DefenceCalculation(crusade2.infantry, 0);
+                            Attack2[2] = Infantry.AttackCalculation(crusade2.infantry, player2.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -474,6 +512,7 @@ namespace Assets.Scripts
                                         crusade1.cavalry = ((Defence1[3] - (Attack2[2] * 3 / 4)) / (Cavalry.Defence));
                                         crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                                         Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
+                                        Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -485,6 +524,7 @@ namespace Assets.Scripts
                                         crusade1.infantry = ((Defence1[2] - (Attack2[2] * 3 / 4)) / (Infantry.Defence));
                                         crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                                         Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
+                                        Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -492,6 +532,7 @@ namespace Assets.Scripts
                                         crusade1.rookie = ((Defence1[0] - (Attack2[2] * 3 / 4)) / (Rookie.Defence));
                                         crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                                         Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
+                                        Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
                                         break;
                                     }
                             }
@@ -501,6 +542,7 @@ namespace Assets.Scripts
                             crusade2.cavalry = ((Defence2[3] - Attack1[i]) / (Cavalry.Defence));
                             crusade2.cavalry = crusade2.cavalry > 0 ? crusade2.cavalry : 0;
                             Defence2[3] = Cavalry.DefenceCalculation(crusade2.cavalry, 0);
+                            Attack2[0] = Cavalry.AttackCalculation(crusade2.cavalry, player2.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -508,6 +550,7 @@ namespace Assets.Scripts
                                         crusade1.cavalry = ((Defence1[3] - (Attack2[0] * 3 / 4)) / (Cavalry.Defence));
                                         crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                                         Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
+                                        Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -519,6 +562,7 @@ namespace Assets.Scripts
                                         crusade1.infantry = ((Defence1[2] - (Attack2[0] * 3 / 4)) / (Infantry.Defence));
                                         crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                                         Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
+                                        Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -526,6 +570,7 @@ namespace Assets.Scripts
                                         crusade1.rookie = ((Defence1[0] - (Attack2[0] * 3 / 4)) / (Rookie.Defence));
                                         crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                                         Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
+                                        Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
                                         break;
                                     }
                             }
@@ -541,6 +586,7 @@ namespace Assets.Scripts
                             crusade1.rookie = ((Defence1[0] - Attack2[i]) / (Rookie.Defence));
                             crusade1.rookie = crusade1.rookie > 0 ? crusade1.rookie : 0;
                             Defence1[0] = Rookie.DefenceCalculation(crusade1.rookie, 0);
+                            Attack1[3] = Rookie.AttackCalculation(crusade1.rookie, player1.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -548,6 +594,7 @@ namespace Assets.Scripts
                                         crusade2.cavalry = ((Defence2[3] - (Attack1[3] * 3 / 4)) / (Cavalry.Defence));
                                         crusade2.cavalry = crusade2.cavalry > 0 ? crusade2.cavalry : 0;
                                         Attack2[0] = Cavalry.AttackCalculation(crusade2.cavalry, 0);
+                                        Defence2[3] = Cavalry.DefenceCalculation(crusade2.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -559,6 +606,7 @@ namespace Assets.Scripts
                                         crusade2.infantry = ((Defence2[2] - (Attack1[3] * 3 / 4)) / (Infantry.Defence));
                                         crusade2.infantry = crusade2.infantry > 0 ? crusade2.infantry : 0;
                                         Attack2[2] = Infantry.AttackCalculation(crusade2.infantry, 0);
+                                        Defence2[2] = Infantry.DefenceCalculation(crusade2.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -566,6 +614,7 @@ namespace Assets.Scripts
                                         crusade2.rookie = ((Defence2[0] - (Attack1[3] * 3 / 4)) / (Rookie.Defence));
                                         crusade2.rookie = crusade2.rookie > 0 ? crusade2.rookie : 0;
                                         Attack2[3] = Rookie.AttackCalculation(crusade2.rookie, 0);
+                                        Defence2[0] = Rookie.DefenceCalculation(crusade2.rookie, 0);
                                         break;
                                     }
                             }
@@ -575,6 +624,7 @@ namespace Assets.Scripts
                             crusade1.shooter = ((Defence1[1] - Attack2[i]) / (Shooter.Defence));
                             crusade1.shooter = crusade1.shooter > 0 ? crusade1.shooter : 0;
                             Defence1[1] = Shooter.DefenceCalculation(crusade1.shooter, 0);
+                            Attack1[1] = Shooter.AttackCalculation(crusade1.shooter, player1.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -582,6 +632,7 @@ namespace Assets.Scripts
                                         crusade2.cavalry = ((Defence2[3] - (Attack1[1] * 3 / 4)) / (Cavalry.Defence));
                                         crusade2.cavalry = crusade2.cavalry > 0 ? crusade2.cavalry : 0;
                                         Attack2[0] = Cavalry.AttackCalculation(crusade2.cavalry, 0);
+                                        Defence2[3] = Cavalry.DefenceCalculation(crusade2.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -593,6 +644,7 @@ namespace Assets.Scripts
                                         crusade2.infantry = ((Defence2[2] - (Attack1[1] * 3 / 4)) / (Infantry.Defence));
                                         crusade2.infantry = crusade2.infantry > 0 ? crusade2.infantry : 0;
                                         Attack2[2] = Infantry.AttackCalculation(crusade2.infantry, 0);
+                                        Defence2[2] = Infantry.DefenceCalculation(crusade2.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -600,6 +652,7 @@ namespace Assets.Scripts
                                         crusade2.rookie = ((Defence2[0] - (Attack1[1] * 3 / 4)) / (Rookie.Defence));
                                         crusade2.rookie = crusade2.rookie > 0 ? crusade2.rookie : 0;
                                         Attack2[3] = Rookie.AttackCalculation(crusade2.rookie, 0);
+                                        Defence2[0] = Rookie.DefenceCalculation(crusade2.rookie, 0);
                                         break;
                                     }
                             }
@@ -609,6 +662,7 @@ namespace Assets.Scripts
                             crusade1.infantry = ((Defence1[2] - Attack2[i]) / (Infantry.Defence));
                             crusade1.infantry = crusade1.infantry > 0 ? crusade1.infantry : 0;
                             Defence1[2] = Infantry.DefenceCalculation(crusade1.infantry, 0);
+                            Attack1[2] = Infantry.AttackCalculation(crusade1.infantry, player1.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -616,6 +670,7 @@ namespace Assets.Scripts
                                         crusade2.cavalry = ((Defence2[3] - (Attack1[2] * 3 / 4)) / (Cavalry.Defence));
                                         crusade2.cavalry = crusade2.cavalry > 0 ? crusade2.cavalry : 0;
                                         Attack2[0] = Cavalry.AttackCalculation(crusade2.cavalry, 0);
+                                        Defence2[3] = Cavalry.DefenceCalculation(crusade2.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -627,6 +682,7 @@ namespace Assets.Scripts
                                         crusade2.infantry = ((Defence2[2] - (Attack1[2] * 3 / 4)) / (Infantry.Defence));
                                         crusade2.infantry = crusade2.infantry > 0 ? crusade2.infantry : 0;
                                         Attack2[2] = Infantry.AttackCalculation(crusade2.infantry, 0);
+                                        Defence2[2] = Infantry.DefenceCalculation(crusade2.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -634,6 +690,7 @@ namespace Assets.Scripts
                                         crusade2.rookie = ((Defence2[0] - (Attack1[2] * 3 / 4)) / (Rookie.Defence));
                                         crusade2.rookie = crusade2.rookie > 0 ? crusade2.rookie : 0;
                                         Attack2[3] = Rookie.AttackCalculation(crusade2.rookie, 0);
+                                        Defence2[0] = Rookie.DefenceCalculation(crusade2.rookie, 0);
                                         break;
                                     }
                             }
@@ -643,6 +700,7 @@ namespace Assets.Scripts
                             crusade1.cavalry = ((Defence1[3] - Attack2[i]) / (Cavalry.Defence));
                             crusade1.cavalry = crusade1.cavalry > 0 ? crusade1.cavalry : 0;
                             Defence1[3] = Cavalry.DefenceCalculation(crusade1.cavalry, 0);
+                            Attack1[0] = Cavalry.AttackCalculation(crusade1.cavalry, player1.church.crusadeAttack);
                             switch (i)
                             {
                                 case 0:
@@ -650,6 +708,7 @@ namespace Assets.Scripts
                                         crusade2.cavalry = ((Defence2[3] - (Attack1[0] * 3 / 4)) / (Cavalry.Defence));
                                         crusade2.cavalry = crusade2.cavalry > 0 ? crusade2.cavalry : 0;
                                         Attack2[0] = Cavalry.AttackCalculation(crusade2.cavalry, 0);
+                                        Defence2[3] = Cavalry.DefenceCalculation(crusade2.cavalry, 0);
                                         break;
                                     }
                                 case 1:
@@ -661,6 +720,7 @@ namespace Assets.Scripts
                                         crusade2.infantry = ((Defence2[2] - (Attack1[0] * 3 / 4)) / (Infantry.Defence));
                                         crusade2.infantry = crusade2.infantry > 0 ? crusade2.infantry : 0;
                                         Attack2[2] = Infantry.AttackCalculation(crusade2.infantry, 0);
+                                        Defence2[2] = Infantry.DefenceCalculation(crusade2.infantry, 0);
                                         break;
                                     }
                                 case 3:
@@ -668,6 +728,7 @@ namespace Assets.Scripts
                                         crusade2.rookie = ((Defence2[0] - (Attack1[0] * 3 / 4)) / (Rookie.Defence));
                                         crusade2.rookie = crusade2.rookie > 0 ? crusade2.rookie : 0;
                                         Attack2[3] = Rookie.AttackCalculation(crusade2.rookie, 0);
+                                        Defence2[0] = Rookie.DefenceCalculation(crusade2.rookie, 0);
                                         break;
                                     }
                             }

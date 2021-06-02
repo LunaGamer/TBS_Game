@@ -11,9 +11,9 @@ public class SceneSwitch : MonoBehaviour
     public Camera mainCamera;
     public Camera MapCamera;
     public Camera MenuCamera;
-    public Canvas canvas1;
-    public Canvas canvas2;
-    public Canvas canvas3;
+    public GameObject Menu;
+    public GameObject Castle;
+    public GameObject Map;
 
     public void SwitchScene(int index)
     {
@@ -21,9 +21,9 @@ public class SceneSwitch : MonoBehaviour
         {
             case 1:
                 {
-                    canvas1.enabled = false;
-                    canvas2.enabled = false;
-                    canvas3.enabled = true;
+                    Menu.SetActive(true);
+                    Castle.SetActive(false);
+                    Map.SetActive(false);
                     mainCamera.gameObject.SetActive(false);
                     MapCamera.gameObject.SetActive(false);
                     MenuCamera.gameObject.SetActive(true);
@@ -31,9 +31,9 @@ public class SceneSwitch : MonoBehaviour
                 }
             case 2:
                 {
-                    canvas1.enabled = true;
-                    canvas2.enabled = false;
-                    canvas3.enabled = false;
+                    Menu.SetActive(false);
+                    Castle.SetActive(true);
+                    Map.SetActive(false);
                     mainCamera.gameObject.SetActive(true);
                     MapCamera.gameObject.SetActive(false);
                     MenuCamera.gameObject.SetActive(false);
@@ -41,9 +41,9 @@ public class SceneSwitch : MonoBehaviour
                 }
             case 3:
                 {
-                    canvas1.enabled = false;
-                    canvas2.enabled = true;
-                    canvas3.enabled = false;
+                    Menu.SetActive(false);
+                    Castle.SetActive(false);
+                    Map.SetActive(true);
                     mainCamera.gameObject.SetActive(false);
                     MapCamera.gameObject.SetActive(true);
                     MenuCamera.gameObject.SetActive(false);
@@ -58,9 +58,9 @@ public class SceneSwitch : MonoBehaviour
         MenuCamera.gameObject.SetActive(false);
         mainCamera.gameObject.SetActive(true);
         MapCamera.gameObject.SetActive(false);
-        canvas1.enabled = true;
-        canvas2.enabled = false;
-        canvas3.enabled = false;
+        Menu.SetActive(false);
+        Castle.SetActive(true);
+        Map.SetActive(false);
     }
 
     // Update is called once per frame
