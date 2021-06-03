@@ -99,7 +99,8 @@ namespace Assets.Scripts
                 {
                     CrusadeSquad.transform.localPosition = point;
                     movePoints -= (int)(Math.Abs(current.x - point.x) + Math.Abs(current.y - point.y));                    
-                    if (player.Enemy1.crusade.CrusadeSquad.activeSelf && CrusadeSquad.transform.localPosition == player.Enemy1.crusade.CrusadeSquad.transform.localPosition)
+                    if (player.Enemy1.crusade.CrusadeSquad.activeSelf && CrusadeSquad.transform.localPosition.x == player.Enemy1.crusade.CrusadeSquad.transform.localPosition.x
+                        && CrusadeSquad.transform.localPosition.y == player.Enemy1.crusade.CrusadeSquad.transform.localPosition.y)
                     {
                         battle.BattleCalculation(player, player.Enemy1, this, player.Enemy1.crusade); //battle enemy crusade squad
                     }
@@ -108,7 +109,8 @@ namespace Assets.Scripts
                     {
                         battle.BattleCalculation(player, player.Enemy1, this, player.Enemy1.army); //attack on enemy castle
                     }
-                    if (player.Enemy2.crusade.CrusadeSquad.activeSelf && CrusadeSquad.transform.localPosition == player.Enemy2.crusade.CrusadeSquad.transform.localPosition)
+                    if (player.Enemy2.crusade.CrusadeSquad.activeSelf && CrusadeSquad.transform.localPosition.x == player.Enemy2.crusade.CrusadeSquad.transform.localPosition.x
+                        && CrusadeSquad.transform.localPosition.y == player.Enemy2.crusade.CrusadeSquad.transform.localPosition.y)
                     {
                         battle.BattleCalculation(player, player.Enemy2, this, player.Enemy2.crusade);
                     }
@@ -117,7 +119,8 @@ namespace Assets.Scripts
                     {
                         battle.BattleCalculation(player, player.Enemy2, this, player.Enemy2.army);
                     }
-                    if (player.Enemy3.crusade.CrusadeSquad.activeSelf && CrusadeSquad.transform.localPosition == player.Enemy3.crusade.CrusadeSquad.transform.localPosition)
+                    if (player.Enemy3.crusade.CrusadeSquad.activeSelf && CrusadeSquad.transform.localPosition.x == player.Enemy3.crusade.CrusadeSquad.transform.localPosition.x
+                        && CrusadeSquad.transform.localPosition.y == player.Enemy3.crusade.CrusadeSquad.transform.localPosition.y)
                     {
                         battle.BattleCalculation(player, player.Enemy3, this, player.Enemy3.crusade);
                     }
